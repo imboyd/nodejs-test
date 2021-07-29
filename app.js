@@ -1,7 +1,7 @@
-const tracer = require('dd-trace').init(
-    //logIngestion = true
-);
-console.log('Init dd-trace');
+// // const tracer = require('dd-trace').init(
+// //     //logIngestion = true
+// // );
+// console.log('Init dd-trace');
 
 const path = require('path');
 
