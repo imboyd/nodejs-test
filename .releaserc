@@ -17,8 +17,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "./scripts/semantic-release/prepareCmd.sh v${nextRelease.version}",
-        "publishCmd": "./scripts/semantic-release/publishCmd.sh v${nextRelease.version}"
+        "publishCmd": "./scripts/test-publishCmd.sh"
       }
     ]
   ]
