@@ -17,6 +17,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install @semantic-release/exec
       - run: docker build -t iamboyd/nodejs-test .
+      - name: docker login
+        run: docker login -u ${{ secrets.DOCKER_USER_iamboyd }} -p ${{ secrets.DOCKER_PASSWORD_iamboyd }}
       - name: STEP - semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
