@@ -15,11 +15,10 @@ jobs:
         with:
           node-version: '14'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm --version
-      - run: npx --version
+      - run: npm -i @semantic-release/exec
       - run: docker build -t iamboyd/nodejs-test .
       - name: STEP - semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+        run: npx -p "@semantic-release/exec" semantic-release
