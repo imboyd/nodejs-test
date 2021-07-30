@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '14'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm -i @semantic-release/exec
+      - run: npm install @semantic-release/exec
       - run: docker build -t iamboyd/nodejs-test .
       - name: STEP - semantic-release
         env:
