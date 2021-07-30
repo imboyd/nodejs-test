@@ -16,6 +16,6 @@ jobs:
           node-version: "14"
           registry-url: "https://registry.npmjs.org"
       - run: docker build -t iamboyd/nodejs-test .
-      - run: mkdir dist && zip -r dist/artifact.zip deploy -x "/*node_modules/*" -x "/*cdk.out/*"
+      #- run: mkdir dist && zip -r dist/artifact.zip deploy -x "/*node_modules/*" -x "/*cdk.out/*"
       - name: semantic-release
         run: npx -p "@semantic-release/exec" semantic-release --debug
