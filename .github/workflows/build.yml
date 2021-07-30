@@ -1,0 +1,24 @@
+name: build
+
+on: 
+  push:
+    branches:
+      - '**'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install @semantic-release/exec
+      - run: docker build -t iamboyd/nodejs-test .
+      - name: STEP - semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release --plugins "@semantic-release/exec"
