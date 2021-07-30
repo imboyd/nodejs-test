@@ -21,4 +21,4 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx -p "@semantic-release/exec" semantic-release
+        run: npx semantic-release --plugins "@semantic-release/exec"
