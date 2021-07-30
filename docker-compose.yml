@@ -1,11 +1,12 @@
-version: '3.4'
+version: "3.9"
 services:
-  datadog-agent:
+  dd-agent:
     image: datadog/agent:latest
     ports:
       - 8126:8126/tcp
   nodejs-webapp:
     image: boylikhit/node-app
+    links:
+      - dd-agent
     ports:
-      - 3001:3000 
-        
+      - 3001:3000
