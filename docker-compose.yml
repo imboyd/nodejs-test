@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  datadog-agent:
+    image: datadog/agent:latest
+    ports:
+      - 8126:8126/tcp
+  nodejs-webapp:
+    image: boylikhit/node-app
+    ports:
+      - 3001:3000 
+        
